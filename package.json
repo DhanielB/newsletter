@@ -1,0 +1,27 @@
+{
+  "name": "newsletter",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "sucrase-node src/index.ts",
+    "dev": "nodemon watch"
+  },
+  "repository": "https://github.com/DhanielB/newsletter.git",
+  "author": "Dhaniel Brandão <dhanielbrandao2@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@ehynds/use-change-effect": "^1.0.0",
+    "@sendgrid/mail": "^7.7.0",
+    "@trycourier/courier": "^3.13.1",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "react": "^18.2.0",
+    "strftime": "^0.10.1",
+    "sucrase": "^3.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
