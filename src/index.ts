@@ -61,9 +61,14 @@ async function trySendNewsletter() {
           title: "CHEGOU! A sua newsletter de hoje delicinha!",
           body: news_text
         },
-        to: {
-          email: "dhanielbrandao2@gmail.com"
-        },
+        to: [
+          {
+            email: "dhanielbrandao2@gmail.com"
+          },
+          {
+            email: 'nandalvernaz@gmail.com'
+          }
+        ],
         routing: {
           method: "single",
           channels: ["email"]
