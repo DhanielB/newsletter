@@ -19,6 +19,9 @@ async function trySendNewsletter() {
     console.log(`[Core] Cancelling loop of newsletter...`)
     sendedNewsletter = false
     invalidHour = currentHour
+    setTimeout(() => {
+      invalidHour = 0
+    }, (60 * 1000))
   }
 
   if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 14) {
