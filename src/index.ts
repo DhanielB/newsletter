@@ -12,8 +12,6 @@ const courier = CourierClient(
 var sendedNewsletter = false
 var invalidHour = 0
 const currentHour = strftime('%H')
-const currentOrientation = strftime("%p").toUpperCase();
-console.log(currentHour)
 
 async function trySendNewsletter() {
   if(sendedNewsletter) {
@@ -22,9 +20,7 @@ async function trySendNewsletter() {
     invalidHour = currentHour
   }
 
-  console.log(invalidHour != currentHour, sendedNewsletter == false, currentOrientation == "AM", currentHour == 15)
-
-  if(invalidHour != currentHour && sendedNewsletter == false && currentOrientation == "AM" && currentHour == 15) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 15) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?country=br&category=technology&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
