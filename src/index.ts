@@ -30,6 +30,12 @@ async function trySendNewsletter() {
     const news_four = object.data.articles[3]
     const news_five = object.data.articles[4]
 
+    news_one.replace(/<[^>]*>?/gm, '')
+    news_two.replace(/<[^>]*>?/gm, '')
+    news_three.replace(/<[^>]*>?/gm, '')
+    news_four.replace(/<[^>]*>?/gm, '')
+    news_five.replace(/<[^>]*>?/gm, '')
+    
     const news_text = `
       ${news_one.title}
       \t${news_one.description}
