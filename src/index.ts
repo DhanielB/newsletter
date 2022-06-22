@@ -30,11 +30,17 @@ async function trySendNewsletter() {
     const news_four = object.data.articles[3]
     const news_five = object.data.articles[4]
 
-    news_one.replace(/<[^>]*>?/gm, '')
-    news_two.replace(/<[^>]*>?/gm, '')
-    news_three.replace(/<[^>]*>?/gm, '')
-    news_four.replace(/<[^>]*>?/gm, '')
-    news_five.replace(/<[^>]*>?/gm, '')
+    news_one.title.replace(/<[^>]*>?/gm, '')
+    news_two.title.replace(/<[^>]*>?/gm, '')
+    news_three.title.replace(/<[^>]*>?/gm, '')
+    news_four.title.replace(/<[^>]*>?/gm, '')
+    news_five.title.replace(/<[^>]*>?/gm, '')
+
+    news_one.description.replace(/<[^>]*>?/gm, '')
+    news_two.description.replace(/<[^>]*>?/gm, '')
+    news_three.description.replace(/<[^>]*>?/gm, '')
+    news_four.description.replace(/<[^>]*>?/gm, '')
+    news_five.description.replace(/<[^>]*>?/gm, '')
     
     const news_text = `
       ${news_one.title}
