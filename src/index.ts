@@ -22,7 +22,7 @@ async function trySendNewsletter() {
     invalidHour = currentHour
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentOrientation == "AM" && currentHour == 14) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentOrientation == "AM" && currentHour == 15) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?country=br&category=technology&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
