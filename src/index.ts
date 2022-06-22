@@ -13,6 +13,7 @@ var sendedNewsletter = false
 var invalidHour = 0
 const currentHour = strftime('%H')
 const currentOrientation = strftime("%p").toUpperCase();
+console.log(currentHour)
 
 async function trySendNewsletter() {
   if(sendedNewsletter) {
