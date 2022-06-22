@@ -16,12 +16,12 @@ console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
   if(sendedNewsletter) {
-    console.log(`[Core] Cancelling loop of newsletter, Timeout : ${100000}`)
+    console.log(`[Core] Cancelling loop of newsletter...`)
     sendedNewsletter = false
     invalidHour = currentHour
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 16) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 14) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
