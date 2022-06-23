@@ -89,9 +89,6 @@ async function trySendNewsletter() {
         to: [
           {
             email: "dhanielbrandao2@gmail.com"
-          },
-          {
-            email: 'nandalvernaz@gmail.com'
           }
         ],
         routing: {
