@@ -29,7 +29,8 @@ async function trySendNewsletter() {
     }, 60 * 1000)
     setTimeout(() => {
       invalidHour = 0
-    }, ((60 * 1000) * 60) * 2
+      console.log('[Core] It's been 2 hours since it was sent restarting invalidHour to (0)...')
+    }, ((60 * 1000) * 60) * 2)
   }
 
   if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 15) {
