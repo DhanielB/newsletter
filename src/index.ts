@@ -29,7 +29,7 @@ async function trySendNewsletter() {
     }, 60 * 1000)
     setTimeout(() => {
       invalidHour = 0
-      console.log('[Core] It's been 2 hours since it was sent restarting invalidHour to (0)...')
+      console.log('[Core] Its been 2 hours since it was sent restarting invalidHour to (0)...')
     }, ((60 * 1000) * 60) * 2)
   }
 
