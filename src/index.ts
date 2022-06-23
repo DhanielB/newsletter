@@ -17,7 +17,7 @@ console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().getMinutes
 
 async function trySendNewsletter() {
   const minutes = new Date().getMinutes()
-  const hours = new Date.getHours()
+  const hours = new Date().getHours()
 
   var date = `${minutes}:${hours}`
   var currentHour = minutes
