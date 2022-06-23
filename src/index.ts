@@ -17,7 +17,7 @@ console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
   if(allowDebug) {
-    console.log(`[Core] Trying... Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 14}`
+    console.log(`[Core] Trying... Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 14}`)
   }
 
   if(sendedNewsletter) {
