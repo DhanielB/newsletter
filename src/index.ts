@@ -9,6 +9,7 @@ const courier = CourierClient(
   { authorizationToken: "pk_prod_CFRJ1GFQD04JZ2HAVC52G9VX1ZGG"}
 );
 
+var date = strftime('%H:%m %p').toUpperCase()
 var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
@@ -17,7 +18,7 @@ console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
   if(allowDebug) {
-    console.log(`[Core] Trying... Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 16}`)
+    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 16}`)
   }
 
   if(sendedNewsletter) {
