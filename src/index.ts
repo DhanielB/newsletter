@@ -13,13 +13,17 @@ var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
 
-console.log(`[Core] Starting on ${strftime('%m')}:${strftime('%m')}...`)
+console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().getMinutes()}...`)
 
 async function trySendNewsletter() {
-  var date = strftime('%H:%m %p', new Date()).toUpperCase()
-  var currentHour = new Date().getMinutes()
+  const minutes = new Date().getMinutes()
+  const hours = new Date.getHours()
+
+  var date = `${minutes}:${hours}`
+  var currentHour = minutes
+
   if(allowDebug) {
-    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 8}`)
+    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 31}`)
   }
 
   if(sendedNewsletter) {
@@ -35,7 +39,7 @@ async function trySendNewsletter() {
     }, ((60 * 1000) * 60) * 2)
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 8) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 31) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
