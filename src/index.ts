@@ -19,7 +19,7 @@ async function trySendNewsletter() {
   const minutes = new Date().getMinutes()
   const hours = new Date().getHours()
 
-  var date = `${minutes}:${hours}`
+  var date = `${hours}:${minutes}`
   var currentHour = hours
   var currentMinutes = minutes
 
