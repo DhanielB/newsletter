@@ -9,16 +9,22 @@ const courier = CourierClient(
   { authorizationToken: "pk_prod_CFRJ1GFQD04JZ2HAVC52G9VX1ZGG"}
 );
 
+var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
 const currentHour = strftime('%H')
 console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
+  if(allowDebug) {
+    console.log(`[Core] Trying... Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}`
   if(sendedNewsletter) {
     console.log(`[Core] Cancelling loop of newsletter...`)
     sendedNewsletter = false
     invalidHour = currentHour
+    setTimeout(() => {
+      allowDebug = true
+    }, 60 * 1000)
   }
 
   if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 14) {
@@ -95,6 +101,7 @@ async function trySendNewsletter() {
     });
 
     sendedNewsletter = true
+    allowDebug = false
 
     console.log('[Core] Sended newsletter with sucessfully sent!', requestId)
   }
