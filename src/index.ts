@@ -13,7 +13,7 @@ var date = strftime('%H:%m %p').toUpperCase()
 var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
-var currentHour = strftime('%H')
+var currentHour = strftime('%m')
 console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
@@ -34,7 +34,7 @@ async function trySendNewsletter() {
     }, ((60 * 1000) * 60) * 2)
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 16) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 8) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
