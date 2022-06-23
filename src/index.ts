@@ -46,11 +46,11 @@ async function trySendNewsletter() {
 
     const result = articles.filter((item, i) => articles.findIndex(item2 => item2.title === item.title) === i) 
 
-    const news_one = articles[0]
-    const news_two = articles[1]
-    const news_three = articles[2]
-    const news_four = articles[3]
-    const news_five = articles[4]
+    const news_one = result[0]
+    const news_two = result[1]
+    const news_three = result[2]
+    const news_four = result[3]
+    const news_five = result[4]
 
     news_one.title.replace(/<[^>]*>?/gm, '')
     news_two.title.replace(/<[^>]*>?/gm, '')
