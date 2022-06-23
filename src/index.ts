@@ -16,8 +16,8 @@ var invalidHour = 0
 console.log(`[Core] Starting on ${strftime('%m')}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
-  var date = strftime('%H:%m %p', Date.now()).toUpperCase()
-  var currentHour = strftime('%m', Date.now())
+  var date = strftime('%H:%m %p', new Date.now()).toUpperCase()
+  var currentHour = strftime('%m', new Date.now())
   if(allowDebug) {
     console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 8}`)
   }
