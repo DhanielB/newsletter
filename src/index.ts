@@ -27,6 +27,9 @@ async function trySendNewsletter() {
     setTimeout(() => {
       allowDebug = true
     }, 60 * 1000)
+    setTimeout(() => {
+      invalidHour = 0
+    }, ((60 * 1000) * 60) * 2
   }
 
   if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 15) {
