@@ -24,7 +24,7 @@ async function trySendNewsletter() {
   var currentMinutes = minutes
 
   if(allowDebug) {
-    console.log(`[Core] Trying... Date : ${date}, Send hours : 11:55, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 11 && currentMinutes == 55}`)
+    console.log(`[Core] Trying... Date : ${date}, Send hours : 17:23, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 17 && currentMinutes == 23}`)
   }
 
   if(sendedNewsletter) {
@@ -40,17 +40,17 @@ async function trySendNewsletter() {
     }, ((60 * 1000) * 60) * 2)
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 11 && currentMinutes == 55) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 17 && currentMinutes == 23) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=843840939423426e833acee9382d8e15')
     const { articles } = object.data
 
     const result = articles.filter((item, i) => articles.findIndex(item2 => item2.title === item.title) === i) 
 
-    const news_one = object.data.articles[0]
-    const news_two = object.data.articles[1]
-    const news_three = object.data.articles[2]
-    const news_four = object.data.articles[3]
-    const news_five = object.data.articles[4]
+    const news_one = articles[0]
+    const news_two = articles[1]
+    const news_three = articles[2]
+    const news_four = articles[3]
+    const news_five = articles[4]
 
     news_one.title.replace(/<[^>]*>?/gm, '')
     news_two.title.replace(/<[^>]*>?/gm, '')
