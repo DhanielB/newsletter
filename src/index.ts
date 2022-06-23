@@ -24,7 +24,7 @@ async function trySendNewsletter() {
   var currentMinutes = minutes
 
   if(allowDebug) {
-    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 11 && currentMinutes == 55}`)
+    console.log(`[Core] Trying... Date : ${date}, Send hours : 11:55, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 11 && currentMinutes == 55}`)
   }
 
   if(sendedNewsletter) {
