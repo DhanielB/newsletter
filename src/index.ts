@@ -19,7 +19,7 @@ async function trySendNewsletter() {
   var date = strftime('%H:%m %p').toUpperCase()
   var currentHour = strftime('%m')
   if(allowDebug) {
-    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 2}`)
+    console.log(`[Core] Trying... Date : ${date}, Current Hour : ${currentHour}, Invalid Hour : ${invalidHour}, sendedNewsletter : ${sendedNewsletter}, isValid: ${invalidHour != currentHour && sendedNewsletter == false && currentHour == 8}`)
   }
 
   if(sendedNewsletter) {
@@ -35,7 +35,7 @@ async function trySendNewsletter() {
     }, ((60 * 1000) * 60) * 2)
   }
 
-  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 2) {
+  if(invalidHour != currentHour && sendedNewsletter == false && currentHour == 8) {
     const object = await axios.get('https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=843840939423426e833acee9382d8e15')
 
     const news_one = object.data.articles[0]
