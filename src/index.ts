@@ -12,7 +12,7 @@ const courier = CourierClient(
 var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
-const currentHour = strftime('%H')
+var currentHour = strftime('%H')
 console.log(`[Core] Starting on ${currentHour}:${strftime('%m')}...`)
 
 async function trySendNewsletter() {
