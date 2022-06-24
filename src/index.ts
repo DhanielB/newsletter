@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-import strftime from "strftime"
 import axios from "axios"
 import { CourierClient } from "@trycourier/courier";
 
@@ -12,8 +11,11 @@ const courier = CourierClient(
 var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
+var startDate = new Date()
 
-console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" }).getMinutes()}...`)
+startDate.toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" })
+
+console.log(`[Core] Starting on ${startDate.getHours()}:${startDate.getMinutes()}...`)
 
 async function trySendNewsletter() {
   var newDate = new Date()
