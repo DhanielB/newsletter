@@ -16,7 +16,7 @@ var invalidHour = 0
 console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().getMinutes()}...`)
 
 async function trySendNewsletter() {
-  const newDate = new Date().toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" })}
+  const newDate = new Date().toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" })
   const minutes = newDate.getMinutes()
   const hours = newDate.getHours()
 
