@@ -13,7 +13,7 @@ var allowDebug = true
 var sendedNewsletter = false
 var invalidHour = 0
 
-console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().getMinutes()}...`)
+console.log(`[Core] Starting on ${new Date().getHours()}:${new Date().toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" }).getMinutes()}...`)
 
 async function trySendNewsletter() {
   const newDate = new Date().toLocaleString("pt-Br", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" })
