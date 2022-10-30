@@ -1,3 +1,3 @@
 # Newsletter
 
-Simple newsletter for recents news
+Simple newsletter for recents news 📰🖖🗞
